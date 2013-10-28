@@ -1,4 +1,3 @@
-from path import path
 
 DB_NAME = 'boots'
 DB_USER = 'root'

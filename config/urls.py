@@ -1,9 +1,8 @@
 from django.conf.urls import patterns, include, url
-from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-from django.conf import settings
-from django.conf.urls.static import static
 
 from django.contrib import admin
+from tastypie.api import Api
+from dashboard.api.resource import DashBoardResource, UserResource
 
 from mainpage.views import MainPageView
 
@@ -17,5 +16,12 @@ urlpatterns = patterns(
     url(r'^grappelli/', include('grappelli.urls')),
 )
 
-#urlpatterns += staticfiles_urlpatterns()
-#urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+v1_api = Api(api_name='v1')
+v1_api.register(DashBoardResource())
+v1_api.register(UserResource())
+
+
+urlpatterns += patterns(
+    '',
+    (r'^api/', include(v1_api.urls)),
+)

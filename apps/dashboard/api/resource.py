@@ -2,8 +2,7 @@ from django.contrib.auth.models import User
 
 from tastypie.resources import ModelResource
 from tastypie.paginator import Paginator
-
-from apps.dashboard.model import DashBoardModel
+from dashboard.model import DashBoardModel
 
 
 class DashBoardResource(ModelResource):
@@ -18,11 +17,16 @@ class DashBoardResource(ModelResource):
         always_return_data = True
         paginator_class = Paginator
 
+    def determine_format(self, request):
+        return "application/json"
+
+
 class UserResource(ModelResource):
     class Meta:
         queryset = User.objects.all()
         resource_name = 'user'
-        fields = ['username', 'email', 'public', 'first_name', 'last_name', 'last_login', 'password']
+
+        fields = ('username', 'id', 'date_joined', 'is_active')
 
         allowed_methods = ['get']
 

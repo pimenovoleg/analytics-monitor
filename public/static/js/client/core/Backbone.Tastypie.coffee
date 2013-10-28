@@ -70,11 +70,11 @@ define [
     Backbone.Model.prototype.parse = (data) ->
         return data and data.objects and (if _.isArray( data.objects) then data.objects[ 0 ] else data.objects) or data
 
-    Backbone.Collection.prototype.parse = (data) ->
-        if data and data.meta
-            @meta = data.meta;
+    Backbone.Collection.prototype.parse = (response) ->
+        if response and response.meta
+            @meta = response.meta;
 
-        return data && data.objects
+        return response and response.objects
 
     Backbone.Collection.prototype.url = (models) ->
         url = @urlRoot or (models and models.length and models[0].urlRoot)

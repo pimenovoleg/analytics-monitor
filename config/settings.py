@@ -130,7 +130,8 @@ INSTALLED_APPS = (
     # 3rd party apps
     'south',
     'django_extensions',
-    'mainpage'
+    'mainpage',
+    'dashboard'
     
     # Project specific apps go here
     # 'my_app',
