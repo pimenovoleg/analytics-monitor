@@ -1,0 +1,6 @@
+# INCLUDE COMMON REQUIREMENTS
+-r ../production/requires
+
+# DEVELOPMENT SPECIFIC REQUIREMENTS
+
+django-debug-toolbar

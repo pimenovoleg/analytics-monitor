@@ -1,3 +1,14 @@
+# System
+.DS_Store
+
+# js compile files from coffeescript
+public/static/js/client/**/*.js
+public/static/js/client/**/*.map
+
+# IDE
+.idea
+.iml
+
 *.py[cod]
 
 # C extensions
