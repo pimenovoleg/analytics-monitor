@@ -1,8 +1,8 @@
 define [
     'core-app'
     'cs!modules/header/HeaderModuleInit'
-    'cs!modules/dashboard/DashBoardModuleInit'
-], (Core, HeaderModuleInit, DashBoardModuleInit) ->
+    'cs!modules/users/UsersBoardModuleInit'
+], (Core, HeaderModuleInit, UsersBoardModuleInit) ->
 
     App = new Core.Application()
 
@@ -14,6 +14,6 @@ define [
 
     App.addInitializer ->
         new HeaderModuleInit App.headerRegion
-        new DashBoardModuleInit
+        new UsersBoardModuleInit
 
     return App

@@ -13,7 +13,7 @@ define [
             BusStation.vent.on "module:users:selected", =>
                 @activateNavLink headerView.ui.usersModuleLink
 
-            BusStation.vent.on "module:dashboard:selected", =>
+            BusStation.vent.on "module:users:selected", =>
                 @activateNavLink headerView.ui.dashboardModuleLink
 
         activateNavLink: ($link) ->

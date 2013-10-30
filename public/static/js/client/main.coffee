@@ -10,6 +10,9 @@ require.config
             'backbone-babysitter': '../vendors/backbone/backbone.babysitter'
             'backbone-wreqr': '../vendors/backbone/backbone.wreqr'
 
+            'backbone-backgrid': '../vendors/backbone/backgrid'
+            'backbone-backgrid-paginator': '../vendors/backbone/backgrid-paginator'
+
             'underscore': '../vendors/underscore/underscore'
             'tpl': '../vendors/underscore/tpl'
 
@@ -20,6 +23,10 @@ require.config
             'core-app': 'core/Core'
 
         shim: {
+            'backbone-backgrid': {
+                deps: ['jquery', 'underscore', 'backbone']
+                exports: 'Backgrid'
+            }
             'jquery': {
                 exports: '$'
             }

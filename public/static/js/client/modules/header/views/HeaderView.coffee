@@ -8,6 +8,6 @@ define [
         template: HeaderTemplate
         ui:
             usersModuleLink : '#users-module-link'
-            dashboardModuleLink : '#dashboard-module-link'
+            dashboardModuleLink : '#users-module-link'
 
     return HeaderView

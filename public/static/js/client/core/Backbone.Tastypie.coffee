@@ -83,8 +83,8 @@ define [
         if models && models.length
            ids = _.map models, (model) ->
                     parts = _.compact(model.id.split('/'))
-                    itter = parts.length - 1
-                    return parts[itter]
+                    itter = parts.length-1
+                    parts[itter]
 
             url += 'set/' + ids.join( ';' ) + '/';
 
